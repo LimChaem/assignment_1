@@ -13,7 +13,7 @@ class HomeActivity : AppCompatActivity() {
 
         val idData = intent.getStringExtra("ID")
         val userId = findViewById<TextView>(R.id.tv_userId)
-        userId.setText(idData)
+        userId.text = idData
 
         val btn_close = findViewById<Button>(R.id.btn_close)
         btn_close.setOnClickListener {
