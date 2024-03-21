@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">assignment_1</string>
+    <string name="id">아이디</string>
+    <string name="id_place_holder">아이디를 입력해주세요.</string>
+    <string name="pwd">비밀번호</string>
+    <string name="pwd_place_holder">비밀번호를 입력해주세요.</string>
+    <string name="userName">이름 : 홍길동</string>
+    <string name="userAge">나이 : 23</string>
+    <string name="userMbti">MBTI : INFJ</string>
+
+</resources>
