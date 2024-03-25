@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
 
         val idData = intent.getStringExtra("ID")
         val userId = findViewById<TextView>(R.id.tv_userId)
@@ -21,7 +24,5 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
     }
-
 }
