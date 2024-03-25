@@ -4,15 +4,27 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
+
+import kotlin.random.Random
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        val randomImg = findViewById<ImageView>(R.id.iv_home)
+        val random = Random
 
+        val selectedImage = when(random.nextInt(1,5)) {
+            1 -> R.drawable.img_lv1
+            2 -> R.drawable.img_lv2
+            3 -> R.drawable.img_lv3
+            4 -> R.drawable.img_lv4
+            else -> R.drawable.img_lv5
+        }
+
+        randomImg.setImageResource(selectedImage)
 
         val idData = intent.getStringExtra("ID")
         val userId = findViewById<TextView>(R.id.tv_userId)
@@ -24,5 +36,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+
     }
 }
