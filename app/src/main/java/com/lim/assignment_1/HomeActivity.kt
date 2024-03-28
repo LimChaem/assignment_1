@@ -6,17 +6,20 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.ContentInfoCompat.Flags
 
 import kotlin.random.Random
+
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
         val randomImg = findViewById<ImageView>(R.id.iv_home)
         val random = Random
 
-        val selectedImage = when(random.nextInt(1,5)) {
+        val selectedImage = when (random.nextInt(1, 5)) {
             1 -> R.drawable.img_lv1
             2 -> R.drawable.img_lv2
             3 -> R.drawable.img_lv3
@@ -30,9 +33,10 @@ class HomeActivity : AppCompatActivity() {
         val userId = findViewById<TextView>(R.id.tv_userId)
         userId.text = idData
 
-        val btn_close = findViewById<Button>(R.id.btn_close)
-        btn_close.setOnClickListener {
-            val intent = Intent(this, SignlnActivity::class.java)
+        val btnClose = findViewById<Button>(R.id.btn_close)
+        btnClose.setOnClickListener {
+            val intent = Intent(this, SignInActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
             finish()
         }
