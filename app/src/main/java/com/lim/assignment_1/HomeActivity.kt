@@ -36,6 +36,9 @@ class HomeActivity : AppCompatActivity() {
         val btnClose = findViewById<Button>(R.id.btn_close)
         btnClose.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
+
+            /*startActivity(intent) 를 하지 않고 finish()를 할 경우
+            이전에 입력했던 아이디, 비밀번호가 그대로 남아있고, startActivity(intent)를 할 경우 스택이 쌓이는 것을 확인*/
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
             finish()
