@@ -32,7 +32,8 @@ class HomeActivity : AppCompatActivity() {
 
         val btn_close = findViewById<Button>(R.id.btn_close)
         btn_close.setOnClickListener {
-            val intent = Intent(this, SignlnActivity::class.java)
+            val intent = Intent(this, SignInActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
             finish()
         }

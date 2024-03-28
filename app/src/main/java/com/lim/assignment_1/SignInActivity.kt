@@ -9,20 +9,14 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 
-class SignlnActivity : AppCompatActivity() {
+class SignInActivity : AppCompatActivity() {
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
-
-    private lateinit var inputId: EditText
-    private lateinit var inputPassWord: EditText
-    private lateinit var btn_login: Button
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signln)
-        inputId = findViewById<EditText>(R.id.edit_id)
-        inputPassWord = findViewById<EditText>(R.id.edit_password)
-        btn_login = findViewById<Button>(R.id.btn_login)
+        setContentView(R.layout.activity_signin)
+        val inputId = findViewById<EditText>(R.id.edit_id)
+        val inputPassWord = findViewById<EditText>(R.id.edit_password)
+        val btn_login = findViewById<Button>(R.id.btn_login)
 
         btn_login.setOnClickListener {
             if (inputId.text.isEmpty() || inputPassWord.text.isEmpty()) {
@@ -38,7 +32,7 @@ class SignlnActivity : AppCompatActivity() {
 
         val btn_sighUp = findViewById<Button>(R.id.btn_signup)
         btn_sighUp.setOnClickListener {
-            val intent= Intent(this, SignUpActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             resultLauncher.launch(intent)
         }
 
@@ -52,7 +46,6 @@ class SignlnActivity : AppCompatActivity() {
                 inputId.setText(id)
                 inputPassWord.setText(password)
             }
-
         }
     }
 }
