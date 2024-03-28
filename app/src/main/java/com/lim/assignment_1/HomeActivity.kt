@@ -16,7 +16,7 @@ class HomeActivity : AppCompatActivity() {
         val randomImg = findViewById<ImageView>(R.id.iv_home)
         val random = Random
 
-        val selectedImage = when(random.nextInt(1,5)) {
+        val selectedImage = when (random.nextInt(1, 5)) {
             1 -> R.drawable.img_lv1
             2 -> R.drawable.img_lv2
             3 -> R.drawable.img_lv3

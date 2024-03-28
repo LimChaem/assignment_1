@@ -4,86 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity"
     android:background="@color/white"
-    android:padding="20dp">
+    android:padding="20dp"
+    tools:context=".SignInActivity">
 
     <ImageView
         android:id="@+id/imgv_signln"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/signln_img_1"
-        android:scaleType="fitXY"
         android:layout_marginTop="30dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/signln_img_1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="@string/id"
         android:textSize="15sp"
         android:textStyle="bold"
         android:typeface="serif"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgv_signln"
-        android:layout_marginTop="30dp"/>
+        app:layout_constraintTop_toBottomOf="@id/imgv_signln" />
 
     <EditText
         android:id="@+id/edit_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/id_place_holder"
+        android:hint="@string/idHint"
+        android:maxLength="10"
         android:maxLines="1"
         android:textSize="15sp"
-        android:maxLength="10"
-        app:layout_constraintTop_toBottomOf="@id/tv_id"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_id" />
 
     <TextView
         android:id="@+id/tv_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pwd"
+        android:layout_marginTop="20dp"
         android:maxLines="1"
+        android:text="@string/pwd"
         android:textSize="15sp"
         android:textStyle="bold"
         android:typeface="serif"
-        app:layout_constraintTop_toBottomOf="@id/edit_id"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintTop_toBottomOf="@id/edit_id" />
 
     <EditText
         android:id="@+id/edit_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/pwd_place_holder"
+        android:hint="@string/pwdHint"
         android:inputType="textPassword"
         android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/tv_password"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_password" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="로그인"
+        android:layout_marginTop="50dp"
         android:gravity="center"
-        android:onClick="doOnClick"
-        app:layout_constraintTop_toBottomOf="@id/edit_password"
-        android:layout_marginTop="50dp"/>
+        android:text="@string/signIn"
+        app:layout_constraintTop_toBottomOf="@id/edit_password" />
 
     <Button
         android:id="@+id/btn_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="회원가입"
-        android:onClick="doOnClick"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/btn_login"
-        android:layout_marginTop="20dp"/>
-
+        android:text="@string/signUp"
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
